@@ -138,3 +138,88 @@
             event.preventDefault();
 
             let cuenta = document.getElementById("cuenta").value;
+            let nombre = document.getElementById("nombre").value;
+            let carrera = document.getElementById("carrera").value;
+            let semestre = document.getElementById("semestre").value;
+
+            document.getElementById("mostrarCuenta").textContent = cuenta;
+            document.getElementById("mostrarNombre").textContent = nombre;
+            document.getElementById("mostrarCarrera").textContent = carrera;
+            document.getElementById("mostrarSemestre").textContent = semestre;
+
+            document.getElementById("datosAlumno").style.display = "block";
+
+            alert("¡Datos del alumno guardados con éxito!");
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" width="80" height="80" alt="UNAM">
+        <h1 style="flex:2">Universidad Nacional Autónoma de México</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" width="80" height="80" alt="UNAM">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="https://www.cuautitlan.unam.mx" target="_blank">FESC</a></li>
+            <li><a href="https://www.youtube.com" target="_blank">YOUTUBE</a></li>
+        </ul>
+    </nav>
+
+    <div id="principal">
+
+        <section>
+            <h1>Conceptos</h1>
+            <hr width="50%">
+            <center>
+                <button onclick="alert('Word es un procesador de texto')">Word</button><br><br>
+                <button onclick="excel()">Excel</button><br><br>
+                <button onclick="power()">Powerpoint</button><br><br>
+                <button onclick="access()">Access</button><br><br>
+            </center>
+        </section>
+
+        <aside>
+            <h1>Datos del alumno</h1>
+            <hr width="50%">
+
+            <!-- FORMULARIO PARA CAPTURAR DATOS -->
+            <form onsubmit="guardarDatos(event)">
+                <label for="cuenta">Número de Cuenta:</label>
+                <input type="text" id="cuenta" placeholder="Ingresa tu número de cuenta" required>
+
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+
+                <label for="carrera">Carrera:</label>
+                <input type="text" id="carrera" placeholder="Ingresa tu carrera" required>
+
+                <label for="semestre">Semestre:</label>
+                <input type="text" id="semestre" placeholder="Ej. 1.er Semestre" required>
+
+                <center>
+                    <button type="submit">Guardar Datos</button>
+                </center>
+            </form>
+
+            <!-- CONTENEDOR PARA MOSTRAR LOS DATOS INGRESADOS -->
+            <div id="datosAlumno" class="datos-resultado" style="display: none;">
+                <p><strong>Número de Cuenta:</strong> <span id="mostrarCuenta"></span></p>
+                <p><strong>Nombre:</strong> <span id="mostrarNombre"></span></p>
+                <p><strong>Carrera:</strong> <span id="mostrarCarrera"></span></p>
+                <p><strong>Semestre:</strong> <span id="mostrarSemestre"></span></p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <h4>Licenciatura en Informática</h4>
+    </footer>
+
+</body>
+
+</html>
