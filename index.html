@@ -227,3 +227,366 @@
     </style>
 
 </head>
+
+
+<body>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <a
+            href="https://www.unam.mx"
+            target="_blank"
+        >
+
+            <img
+                src="https://www.unam.mx/sites/default/files/images/escudo-unam.png"
+                alt="Escudo de la UNAM"
+            >
+
+        </a>
+
+
+        <h1>
+            Universidad Nacional Autónoma de México
+        </h1>
+
+
+        <a
+            href="https://www.unam.mx"
+            target="_blank"
+        >
+
+            <img
+                src="https://www.unam.mx/sites/default/files/images/escudo-unam.png"
+                alt="Escudo de la UNAM"
+            >
+
+        </a>
+
+    </header>
+
+
+    <!-- MENÚ -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+
+                <a
+                    href="https://www.cuautitlan.unam.mx"
+                    target="_blank"
+                >
+                    FESC
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="https://www.youtube.com"
+                    target="_blank"
+                >
+                    YOUTUBE
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <div id="principal">
+
+
+        <!-- CONCEPTOS -->
+
+        <section>
+
+            <h1>
+                Conceptos
+            </h1>
+
+            <hr>
+
+
+            <button onclick="word()">
+                Word
+            </button>
+
+            <br>
+
+
+            <button onclick="excel()">
+                Excel
+            </button>
+
+            <br>
+
+
+            <button onclick="power()">
+                PowerPoint
+            </button>
+
+            <br>
+
+
+            <button onclick="access()">
+                Access
+            </button>
+
+        </section>
+
+
+        <!-- DATOS DEL ALUMNO -->
+
+        <aside>
+
+            <h1>
+                Datos del alumno
+            </h1>
+
+            <hr>
+
+
+            <form onsubmit="guardarDatos(event)">
+
+
+                <label for="cuenta">
+                    Cuenta:
+                </label>
+
+                <input
+                    type="text"
+                    id="cuenta"
+                    placeholder="Ingresa tu número de cuenta"
+                    required
+                >
+
+
+                <label for="nombre">
+                    Nombre:
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ingresa tu nombre"
+                    required
+                >
+
+
+                <label for="carrera">
+                    Carrera:
+                </label>
+
+                <input
+                    type="text"
+                    id="carrera"
+                    placeholder="Ingresa tu carrera"
+                    required
+                >
+
+
+                <label for="semestre">
+                    Semestre:
+                </label>
+
+                <input
+                    type="text"
+                    id="semestre"
+                    placeholder="Ejemplo: 4°"
+                    required
+                >
+
+
+                <button type="submit">
+                    Guardar datos
+                </button>
+
+
+            </form>
+
+
+            <!-- RESULTADO -->
+
+            <div
+                id="datosAlumno"
+                class="datos"
+                style="display: none;"
+            >
+
+                <h3>
+                    Información del alumno
+                </h3>
+
+
+                <p>
+
+                    <strong>
+                        Cuenta:
+                    </strong>
+
+                    <span id="mostrarCuenta"></span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Nombre:
+                    </strong>
+
+                    <span id="mostrarNombre"></span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Carrera:
+                    </strong>
+
+                    <span id="mostrarCarrera"></span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Semestre:
+                    </strong>
+
+                    <span id="mostrarSemestre"></span>
+
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <h4>
+            Licenciatura en Informática
+        </h4>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        function word() {
+
+            alert(
+                "Word es un procesador de texto."
+            );
+
+        }
+
+
+        function excel() {
+
+            alert(
+                "Excel es una herramienta para trabajar con hojas de cálculo."
+            );
+
+        }
+
+
+        function power() {
+
+            alert(
+                "PowerPoint es un programa para crear presentaciones."
+            );
+
+        }
+
+
+        function access() {
+
+            alert(
+                "Access es un sistema para administrar bases de datos."
+            );
+
+        }
+
+
+        function guardarDatos(event) {
+
+            event.preventDefault();
+
+
+            let cuenta =
+                document.getElementById("cuenta").value;
+
+
+            let nombre =
+                document.getElementById("nombre").value;
+
+
+            let carrera =
+                document.getElementById("carrera").value;
+
+
+            let semestre =
+                document.getElementById("semestre").value;
+
+
+            document.getElementById(
+                "mostrarCuenta"
+            ).textContent = cuenta;
+
+
+            document.getElementById(
+                "mostrarNombre"
+            ).textContent = nombre;
+
+
+            document.getElementById(
+                "mostrarCarrera"
+            ).textContent = carrera;
+
+
+            document.getElementById(
+                "mostrarSemestre"
+            ).textContent = semestre;
+
+
+            document.getElementById(
+                "datosAlumno"
+            ).style.display = "block";
+
+
+            alert(
+                "Los datos del alumno se guardaron correctamente."
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
