@@ -60,7 +60,7 @@
         section {
             background-color: aqua;
             flex: 3;
-            height: 380px;
+            min-height: 420px;
             padding: 15px;
         }
 
@@ -68,7 +68,7 @@
             background-color: aqua;
             margin-left: 20px;
             flex: 2;
-            height: 380px;
+            min-height: 420px;
             padding: 15px;
         }
 
@@ -81,10 +81,43 @@
             justify-content: center;
         }
 
-        .datos-alumno p {
-            font-size: 16px;
-            margin: 12px 0;
-            line-height: 1.4;
+        /* ESTILOS DEL FORMULARIO */
+        aside label {
+            display: block;
+            font-weight: bold;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        aside input {
+            width: 100%;
+            padding: 6px;
+            margin-top: 2px;
+            margin-bottom: 6px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        aside button {
+            margin-top: 8px;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .datos-resultado {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+
+        .datos-resultado p {
+            margin: 5px 0;
+            font-size: 14px;
+            line-height: 1.3;
         }
     </style>
 
@@ -100,55 +133,8 @@
         function access() {
             alert('Access es un sistema gestor de bases de datos.');
         }
-    </script>
-</head>
 
-<body>
+        function guardarDatos(event) {
+            event.preventDefault();
 
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" width="80" height="80" alt="UNAM">
-        <h1 style="flex:2">Universidad Nacional Autónoma de México</h1>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Escudo-UNAM-escalable.svg" width="80" height="80" alt="UNAM">
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="https://www.cuautitlan.unam.mx" target="_blank">FESC</a></li>
-            <li><a href="https://www.youtube.com" target="_blank">YOUTUBE</a></li>
-        </ul>
-    </nav>
-
-    <div id="principal">
-
-        <section>
-            <h1>Conceptos</h1>
-            <hr width="50%">
-            <center>
-                <button onclick="alert('Word es un procesador de texto')">Word</button><br><br>
-                <button onclick="excel()">Excel</button><br><br>
-                <button onclick="power()">Powerpoint</button><br><br>
-                <button onclick="access()">Access</button><br><br>
-            </center>
-        </section>
-
-        <aside>
-            <h1>Datos del alumno</h1>
-            <hr width="50%">
-
-            <div class="datos-alumno">
-                <p><strong>Número de Cuenta:</strong> 320000000</p>
-                <p><strong>Nombre:</strong> Cristian Santiago Espinosa Jimenez</p>
-                <p><strong>Carrera:</strong> Licenciatura en Informática</p>
-                <p><strong>Semestre:</strong> 1.er Semestre</p>
-            </div>
-        </aside>
-
-    </div>
-
-    <footer>
-        <h4>Licenciatura en Informática</h4>
-    </footer>
-
-</body>
-
-</html>
+            let cuenta = document.getElementById("cuenta").value;
